@@ -24,34 +24,34 @@
   - Via simple search
 - Data distributors can distribute the data to the interested parties
   - will provide their api keys to us
-- Consumers can visualize the data, withe visualization tool set
+- Consumers can visualize the data, with visualization tool set
   - visualize the data and make notes from it.
 
 * DOMAINS
 - There are the three domains involved
-  1. Data
+  1. ~Data~
      - Users can access variety of information
-       - we will rely on Quandl Api to list the information
+       - %we will rely on Quandl Api to list the information%
      - We can list all the information that is available to us, so that they can make a choice
-  2. Visualization (renders data)
+  2. ~Visualization~ (renders data)
      - Only data that is made available
-  3. Notes(Users can make notes of the data)
+  3. ~Notes~ (Users can make notes of the data)
      - User can analyze the information and can store it as a note to the visualization
      - He can come later to view it
-  4. Transaction
+  4. ~Transaction~
      - A consumer can request a distributor for data
      - A distribute can approve or deny the request
 
 * USERS
-- Consumers
+- *Consumers*
   - Can source the data as and when needed
   - Can access some open data sets
   - visualization tools available to analyze the data
   - can make notes on the data
-- Distributors
+- *Distributors*
   - Can distribute the data only to users that he intends to
   - can specify which column of data goes to which visualization
-- Admin
+- *Admin*
   - Has control over consumers and distributors
   - Maintains their accounts
   - Could act as intermediary and moderate the conversations
@@ -66,7 +66,7 @@
   - Can set the Visualization to appeal to users
   - Can check which users bought it
 - *Admin*
-  - Help in transactions between consumers and distributeers
+  - Help in transactions between consumers and distributors
 * USERS RELATIONS WITH DOMAINS
 - *Consumers*
   - ~DATA~ : can source or access free data
@@ -94,14 +94,14 @@
   - Can create consumers and distributors
   - Can moderate conversation between consumers and distributors
 * DOMAIN-TO-DOMAIN-RELATIONS
-- DATA
+- ~DATA~
   - Will be sourced through the api
-- Visualization
-  - Will consume the data
-  - Distributors can provide which column can go into the visualization
-- Notes
-  - Will be a product of  consumption of the visualization by the user
+- ~Visualization~
+  - Will consume the ~data~
+  - Distributors can provide which column can go into the ~visualization~
+- ~Notes~
+  - Will be a product of  consumption of the ~visualization~ by the user
   - User Input is added as a note
-- Transaction
-  - Recorded when Distributors authorise Data access to consumers
-  - Data is gets released to consumer when a transaction is sucessfull
+- ~Transaction~
+  - Recorded when Distributors authorize ~Data~ access to consumers
+  - ~Data~ is gets released to consumer when a transaction is successful
