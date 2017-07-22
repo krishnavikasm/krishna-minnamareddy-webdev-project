@@ -1,0 +1,107 @@
+#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='/home/krishna/Documents/bootstrap.css' />
+#+HTML_HEAD_EXTRA: <style>body{width:800px;margin:auto!important;line-height:1.5em;} </style>
+
+#+MACRO: r @@html:<span class='text-danger'>@@$1@@html:</span>@@
+#+MACRO: g @@html:<span class='text-success'>@@$1@@html:</span>@@
+#+MACRO: y @@html:<span class='text-warning'>@@$1@@html:</span>@@
+
+* PROBLEM STATEMENT
+- The world is exploding with information. Data is being generated at a large scale, it is increasingly getting difficult to make sense of it. This problem is very acute in the financial industry because the validation of data is time sensitive in nature. Meaning the usefulness of data depends upon how fast, the data could be decoded and understood. This needs a wide variety of visualization tools, for Eg: US Payroll information can only influence markets for a limited time.
+
+* SOLUTION
+- This problem requires a comprehensive visualization tool set, that could render information so that human eye can catch the anomaly easily.This visualization tool-set will compromise of the following tools
+  - Histogram Visualization
+  - Line chart Visualization
+  - Pie chart visualization
+  - Time series Data visualization
+- The solution is to have a web portal where users can visit and can have information rendered.
+- This portal will primarily depends on https://www.quandl.com/tools/api
+- We fetch data and visually render it to the users, we provide various tools to analyze the data, which includes navigation of data on time series basis and charting of data
+- !The goal is to put in a Minimum Viable Product.!
+
+* GOALS
+- Financial Data can be accessed easily
+  - Via simple search
+- Data distributors can distribute the data to the interested parties
+  - will provide their api keys to us
+- Consumers can visualize the data, withe visualization tool set
+  - visualize the data and make notes from it.
+
+* DOMAINS
+- There are the three domains involved
+  1. Data
+     - Users can access variety of information
+       - we will rely on Quandl Api to list the information
+     - We can list all the information that is available to us, so that they can make a choice
+  2. Visualization (renders data)
+     - Only data that is made available
+  3. Notes(Users can make notes of the data)
+     - User can analyze the information and can store it as a note to the visualization
+     - He can come later to view it
+  4. Transaction
+     - A consumer can request a distributor for data
+     - A distribute can approve or deny the request
+
+* USERS
+- Consumers
+  - Can source the data as and when needed
+  - Can access some open data sets
+  - visualization tools available to analyze the data
+  - can make notes on the data
+- Distributors
+  - Can distribute the data only to users that he intends to
+  - can specify which column of data goes to which visualization
+- Admin
+  - Has control over consumers and distributors
+  - Maintains their accounts
+  - Could act as intermediary and moderate the conversations
+
+* USERS AND GOALS
+- *Consumers*
+  - can access the data
+  - Can visualize and analyze it
+  - Can makes notes from it
+- *Distributors*
+  - Can distribute data
+  - Can set the Visualization to appeal to users
+  - Can check which users bought it
+- *Admin*
+  - Help in transactions between consumers and distributeers
+* USERS RELATIONS WITH DOMAINS
+- *Consumers*
+  - ~DATA~ : can source or access free data
+  - ~Visualization~ : can render data as a visualization
+  - ~Notes~ : can make notes of data
+- *Distributors*
+  - ~DATA~ : can distribute it
+  - ~Visualization~ - can specify which columns go into visualization
+  - Can see who bought their data
+- *Admin*
+  - Can specify users and manage them
+   - Has full control over any data and visualization
+
+* USERS RELATIONS WITH OTHER USERS
+- *Consumers*
+  - Can source data from Distributors
+  - Will be managed by ?Admin?
+  - Users notes from the data will ~not be available~ to distributeers
+  - Can post comments on Data
+- *Distributors*
+  - Can distribute data to Consumers
+  - Can Interact with consumers via comments
+  - Will be managed by ?Admins?
+- *Admin*
+  - Can create consumers and distributors
+  - Can moderate conversation between consumers and distributors
+* DOMAIN-TO-DOMAIN-RELATIONS
+- DATA
+  - Will be sourced through the api
+- Visualization
+  - Will consume the data
+  - Distributors can provide which column can go into the visualization
+- Notes
+  - Will be a product of  consumption of the visualization by the user
+  - User Input is added as a note
+- Transaction
+  - Recorded when Distributors authorise Data access to consumers
+  - Data is gets released to consumer when a transaction is sucessfull
