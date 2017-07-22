@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-07-21 Fri 21:47 -->
+<!-- 2017-07-21 Fri 22:06 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title></title>
@@ -179,7 +179,7 @@
   .org-svg { width: 90%; }
   /*]]>*/-->
 </style>
-<link rel='stylesheet' type='text/css' href='/home/krishna/Documents/bootstrap.css' />
+<link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
 <style>body{width:800px;margin:auto!important;line-height:1.5em;} </style>
 <script type="text/javascript">
 /*
@@ -234,21 +234,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org812c58a">1. PROBLEM STATEMENT</a></li>
-<li><a href="#org3f41b8f">2. SOLUTION</a></li>
-<li><a href="#orgc28a714">3. GOALS</a></li>
-<li><a href="#orgf583fc1">4. DOMAINS</a></li>
-<li><a href="#orgcb54511">5. USERS</a></li>
-<li><a href="#orgcac3784">6. USERS AND GOALS</a></li>
-<li><a href="#orgc1f5bf0">7. USERS RELATIONS WITH DOMAINS</a></li>
-<li><a href="#org2965ae0">8. USERS RELATIONS WITH OTHER USERS</a></li>
-<li><a href="#org1a0f85f">9. DOMAIN-TO-DOMAIN-RELATIONS</a></li>
+<li><a href="#org7a9f695">1. PROBLEM STATEMENT</a></li>
+<li><a href="#orgbdc1a37">2. SOLUTION</a></li>
+<li><a href="#org871a52d">3. GOALS</a></li>
+<li><a href="#orgacdafce">4. DOMAINS</a></li>
+<li><a href="#org31f2f01">5. USERS</a></li>
+<li><a href="#orgf759c3b">6. USERS AND GOALS</a></li>
+<li><a href="#org5971f2a">7. USERS RELATIONS WITH DOMAINS</a></li>
+<li><a href="#org5e36490">8. USERS RELATIONS WITH OTHER USERS</a></li>
+<li><a href="#org00871dc">9. DOMAIN-TO-DOMAIN-RELATIONS</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org812c58a" class="outline-2">
-<h2 id="org812c58a"><span class="section-number-2">1</span> PROBLEM STATEMENT</h2>
+<div id="outline-container-org7a9f695" class="outline-2">
+<h2 id="org7a9f695"><span class="section-number-2">1</span> PROBLEM STATEMENT</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li>The world is exploding with information. Data is being generated at a large scale, it is increasingly getting difficult to make sense of it. This problem is very acute in the financial industry because the validation of data is time sensitive in nature. Meaning the usefulness of data depends upon how fast, the data could be decoded and understood. This needs a wide variety of visualization tools, for Eg: US Payroll information can only influence markets for a limited time.</li>
@@ -256,8 +256,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org3f41b8f" class="outline-2">
-<h2 id="org3f41b8f"><span class="section-number-2">2</span> SOLUTION</h2>
+<div id="outline-container-orgbdc1a37" class="outline-2">
+<h2 id="orgbdc1a37"><span class="section-number-2">2</span> SOLUTION</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>This problem requires a comprehensive visualization tool set, that could render information so that human eye can catch the anomaly easily.This visualization tool-set will compromise of the following tools
@@ -275,8 +275,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgc28a714" class="outline-2">
-<h2 id="orgc28a714"><span class="section-number-2">3</span> GOALS</h2>
+<div id="outline-container-org871a52d" class="outline-2">
+<h2 id="org871a52d"><span class="section-number-2">3</span> GOALS</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li>Financial Data can be accessed easily
@@ -287,7 +287,7 @@ for the JavaScript code in this tag.
 <ul class="org-ul">
 <li>will provide their api keys to us</li>
 </ul></li>
-<li>Consumers can visualize the data, withe visualization tool set
+<li>Consumers can visualize the data, with visualization tool set
 <ul class="org-ul">
 <li>visualize the data and make notes from it.</li>
 </ul></li>
@@ -295,30 +295,30 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgf583fc1" class="outline-2">
-<h2 id="orgf583fc1"><span class="section-number-2">4</span> DOMAINS</h2>
+<div id="outline-container-orgacdafce" class="outline-2">
+<h2 id="orgacdafce"><span class="section-number-2">4</span> DOMAINS</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li>There are the three domains involved
 <ol class="org-ol">
-<li>Data
+<li><code>Data</code>
 <ul class="org-ul">
 <li>Users can access variety of information
 <ul class="org-ul">
-<li>we will rely on Quandl Api to list the information</li>
+<li><span class='text-success'>we will rely on Quandl Api to list the information </span></li>
 </ul></li>
 <li>We can list all the information that is available to us, so that they can make a choice</li>
 </ul></li>
-<li>Visualization (renders data)
+<li><code>Visualization</code> (renders data)
 <ul class="org-ul">
 <li>Only data that is made available</li>
 </ul></li>
-<li>Notes(Users can make notes of the data)
+<li><code>Notes</code> (Users can make notes of the data)
 <ul class="org-ul">
 <li>User can analyze the information and can store it as a note to the visualization</li>
 <li>He can come later to view it</li>
 </ul></li>
-<li>Transaction
+<li><code>Transaction</code>
 <ul class="org-ul">
 <li>A consumer can request a distributor for data</li>
 <li>A distribute can approve or deny the request</li>
@@ -328,23 +328,23 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgcb54511" class="outline-2">
-<h2 id="orgcb54511"><span class="section-number-2">5</span> USERS</h2>
+<div id="outline-container-org31f2f01" class="outline-2">
+<h2 id="org31f2f01"><span class="section-number-2">5</span> USERS</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
-<li>Consumers
+<li><b>Consumers</b>
 <ul class="org-ul">
 <li>Can source the data as and when needed</li>
 <li>Can access some open data sets</li>
 <li>visualization tools available to analyze the data</li>
 <li>can make notes on the data</li>
 </ul></li>
-<li>Distributors
+<li><b>Distributors</b>
 <ul class="org-ul">
 <li>Can distribute the data only to users that he intends to</li>
 <li>can specify which column of data goes to which visualization</li>
 </ul></li>
-<li>Admin
+<li><b>Admin</b>
 <ul class="org-ul">
 <li>Has control over consumers and distributors</li>
 <li>Maintains their accounts</li>
@@ -354,8 +354,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgcac3784" class="outline-2">
-<h2 id="orgcac3784"><span class="section-number-2">6</span> USERS AND GOALS</h2>
+<div id="outline-container-orgf759c3b" class="outline-2">
+<h2 id="orgf759c3b"><span class="section-number-2">6</span> USERS AND GOALS</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li><b>Consumers</b>
@@ -372,13 +372,13 @@ for the JavaScript code in this tag.
 </ul></li>
 <li><b>Admin</b>
 <ul class="org-ul">
-<li>Help in transactions between consumers and distributeers</li>
+<li>Help in transactions between consumers and distributors</li>
 </ul></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc1f5bf0" class="outline-2">
-<h2 id="orgc1f5bf0"><span class="section-number-2">7</span> USERS RELATIONS WITH DOMAINS</h2>
+<div id="outline-container-org5971f2a" class="outline-2">
+<h2 id="org5971f2a"><span class="section-number-2">7</span> USERS RELATIONS WITH DOMAINS</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li><b>Consumers</b>
@@ -404,8 +404,8 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org2965ae0" class="outline-2">
-<h2 id="org2965ae0"><span class="section-number-2">8</span> USERS RELATIONS WITH OTHER USERS</h2>
+<div id="outline-container-org5e36490" class="outline-2">
+<h2 id="org5e36490"><span class="section-number-2">8</span> USERS RELATIONS WITH OTHER USERS</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li><b>Consumers</b>
@@ -417,8 +417,8 @@ for the JavaScript code in this tag.
 </ul></li>
 <li><b>Distributors</b>
 <ul class="org-ul">
-<li>Can distribute data to Consumers</li>
 <li>Can Interact with consumers via comments</li>
+<li>Can distribute data to Consumers</li>
 <li>Will be managed by <span class='text-warning'>Admins </span></li>
 </ul></li>
 <li><b>Admin</b>
@@ -429,28 +429,28 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-org1a0f85f" class="outline-2">
-<h2 id="org1a0f85f"><span class="section-number-2">9</span> DOMAIN-TO-DOMAIN-RELATIONS</h2>
+<div id="outline-container-org00871dc" class="outline-2">
+<h2 id="org00871dc"><span class="section-number-2">9</span> DOMAIN-TO-DOMAIN-RELATIONS</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
-<li>DATA
+<li><code>DATA</code>
 <ul class="org-ul">
 <li>Will be sourced through the api</li>
 </ul></li>
-<li>Visualization
+<li><code>Visualization</code>
 <ul class="org-ul">
-<li>Will consume the data</li>
-<li>Distributors can provide which column can go into the visualization</li>
+<li>Will consume the <code>data</code></li>
+<li>Distributors can provide which column can go into the <code>visualization</code></li>
 </ul></li>
-<li>Notes
+<li><code>Notes</code>
 <ul class="org-ul">
-<li>Will be a product of  consumption of the visualization by the user</li>
+<li>Will be a product of  consumption of the <code>visualization</code> by the user</li>
 <li>User Input is added as a note</li>
 </ul></li>
-<li>Transaction
+<li><code>Transaction</code>
 <ul class="org-ul">
-<li>Recorded when Distributors authorise Data access to consumers</li>
-<li>Data is gets released to consumer when a transaction is sucessfull</li>
+<li>Recorded when Distributors authorize <code>Data</code> access to consumers</li>
+<li><code>Data</code> is gets released to consumer when a transaction is successful</li>
 </ul></li>
 </ul>
 </div>
@@ -458,7 +458,7 @@ for the JavaScript code in this tag.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: krishna</p>
-<p class="date">Created: 2017-07-21 Fri 21:47</p>
+<p class="date">Created: 2017-07-21 Fri 22:06</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
