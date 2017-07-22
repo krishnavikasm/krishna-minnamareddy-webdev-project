@@ -1,4 +1,4 @@
-#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='/home/krishna/Documents/bootstrap.css' />
+#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' />
 #+HTML_HEAD_EXTRA: <style>body{width:800px;margin:auto!important;line-height:1.5em;} </style>
 
 #+MACRO: r @@html:<span class='text-danger'>@@$1@@html:</span>@@
@@ -87,8 +87,8 @@
   - Users notes from the data will ~not be available~ to distributeers
   - Can post comments on Data
 - *Distributors*
-  - Can distribute data to Consumers
   - Can Interact with consumers via comments
+  - Can distribute data to Consumers
   - Will be managed by ?Admins?
 - *Admin*
   - Can create consumers and distributors
