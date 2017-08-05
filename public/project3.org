@@ -1,0 +1,43 @@
+#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='/home/krishna/Documents/bootstrap.css' />
+#+HTML_HEAD_EXTRA: <style>body{width:800px;margin:auto!important;line-height:1.5em;} </style>
+
+#+MACRO: r @@html:<span class='text-danger'>@@$1@@html:</span>@@
+#+MACRO: g @@html:<span class='text-success'>@@$1@@html:</span>@@
+#+MACRO: y @@html:<span class='text-warning'>@@$1@@html:</span>@@
+
+* Project3
+** API
+- We use Quandl Api to fetch the data 
+- We First get all available datasets from one database and then search in the database 
+- we use the following queries
+#+BEGIN_EXAMPLE
+https://www.quandl.com/api/v3/datasets.json?database_code=NSE&sort_by=id&page=1&api_key=${API_KEY}
+#+END_EXAMPLE
+
+- The above retrieves the list of datasets in the *NSE database*
+  - database_code is the id of the database
+  - sort_by sorts the results according to input -- in this case id
+  - we get only one page, since the results set is assumed to be small, we can paginate accordingly
+  - API KEY is the key we get when we create account at quandl.com
+
+#+BEGIN_EXAMPLE
+https://www.quandl.com/api/v3/datasets/${database}/${code}.json?limit=10&api_key=${API_KEY
+#+END_EXAMPLE
+
+- the above retrieves datasets in a particular database 
+  - database - is the code of database
+  - datasets - is the dataset in the database
+  - limit - is the number of results in the page
+** DOMAIN and Users
+- Our domain primarily rotates around data
+- Data mode includes users able to submit the data which is equivalent to the first url
+- users using the dataset to view and visualize the data and explained in the second
+
+* Experiment
+- We retrives all the available datasets in the database *NSE*
+- We put that as ~autoComplete search box~ 
+- user can type in random text to find out the available dataset
+- the dataset will be shown with following information
+- then user can select the information by asking the fetchDataSet
+- the dataset will be displayed with the results limiting to 10 
+- link here [[./][POC Page]]
