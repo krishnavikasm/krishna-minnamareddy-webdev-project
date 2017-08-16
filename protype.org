@@ -1,0 +1,30 @@
+#+HTML_HEAD: <link rel='stylesheet' type='text/css' href='/home/krishna/Documents/bootstrap.css' />
+#+HTML_HEAD_EXTRA: <style>body{width:800px;margin:auto!important;line-height:1.5em;} </style>
+
+#+MACRO: r @@html:<span class='text-danger'>@@$1@@html:</span>@@
+#+MACRO: g @@html:<span class='text-success'>@@$1@@html:</span>@@
+#+MACRO: y @@html:<span class='text-warning'>@@$1@@html:</span>@@
+
+* Users
+- username : krishna pass: krishna
+- admin: admin
+
+- krishna can communicate with admin
+
+* Relations
+- Users can communicate with each other via comments
+
+* Authentication
+- All routes are secured with passportJS
+- data cannot be fetched without authentication
+
+* Instructions
+- Visit this page https://webdev-spring-2017-krishna.herokuapp.com/prototype.html#/
+- enter either of username and password
+- you will land to comments page
+- enter the comment
+- logout
+
+- enter as admin
+- see that the comments are persisted between users
+- and comments chain exist
