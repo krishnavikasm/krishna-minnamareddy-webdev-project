@@ -46511,7 +46511,7 @@ var AddVisualization = function (_Component) {
       };
 
       (0, _fetch.fetchPost)('addVisualization', visualization).then(function (response) {
-        return console.log(response);
+        _this.props.router.push("/");
       });
     };
 
