@@ -18,13 +18,6 @@ var config = {
   module: {
     rules: [
       {
-        enforce: 'pre',
-        test: /\.jsx?/,
-        exclude: /(node_modules)/,
-        include: /src/,
-        loader: 'eslint-loader'
-      },
-      {
         test: /\.jsx?/,
         exclude: /(node_modules)/,
         include: /src/,

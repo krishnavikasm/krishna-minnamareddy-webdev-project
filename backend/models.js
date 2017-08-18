@@ -1,8 +1,10 @@
 const { mongoose } = require('./database.js');
-const { User, Comment } = require('./schema.js');
+const { User, Comment, Visualization, Note } = require('./schema.js');
 
 const UserModel = mongoose.model('User', User);
 const CommentModel = mongoose.model('Comment', Comment);
+const VisualizationModel = mongoose.model('Visualization', Visualization);
+const NoteModel = mongoose.model('Note', Note);
 
 UserModelApi = {
   createUser: (user) => UserModel.create(user),
@@ -19,7 +21,24 @@ CommentModelApi = {
   find: (comment) => CommentModel.find(comment)
 };
 
+VisualizationModelApi = {
+  create: (visualization) => VisualizationModel.create(visualization),
+  find: (v) => VisualizationModel.find(v),
+  findOne: (visualization) => VisualizationModel.findOne(visualization),
+  updateVisualization: (_id, visualization) => VisualizationModel.findOneAndUpdate({_id}, visualization),
+  delete: (v) => VisualizationModel.remove({_id: v}),
+};
+
+NoteApi = {
+  create: (note) => NoteModel.create(note),
+  find: (note) => NoteModel.find(note),
+};
+
+UserModelApi.createUser({username: "admin", password: "admin", role: "admin" });
+
 module.exports = {
   UserModelApi,
-  CommentModelApi
+  CommentModelApi,
+  VisualizationModelApi,
+  NoteApi,
 };

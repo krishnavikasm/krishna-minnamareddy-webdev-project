@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-fetch';
 
-import Logout from 'main/Logout';
-import ListComments from 'main/ListComments';
+import ListComments from 'comments/ListComments';
 
 class Comment extends Component {
   constructor(props) {
@@ -36,6 +35,8 @@ class Comment extends Component {
       credentials: 'same-origin',
       body: JSON.stringify({
         text: this.form.comment.value,
+        visualization: this.props.visualization? this.props.visualization._id : undefined,
+        user: this.props.user ? this.props.user._id: undefined,
       }),
     };
     fetch('/submit', opts)
@@ -60,11 +61,14 @@ class Comment extends Component {
     return (
       <div>
         <form onSubmit={this.submit} ref={(node) => { this.form = node; }}>
-          <textarea rows="3" name="comment" />
-          <button type="submit">submit</button>
+          <div className="form-group">
+            <textarea className="form-control" rows="3" name="comment" />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="form-control btn btn-primary btn-block">submit</button>
+          </div>
         </form>
-        <ListComments commentsUpdated />
-        <Logout router={this.context.router} />
+        <ListComments {...this.props} commentsUpdated />
         { this.getMessage() }
       </div>
     );

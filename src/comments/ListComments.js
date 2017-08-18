@@ -26,7 +26,9 @@ class ListComments extends Component {
       credentials: 'same-origin',
     };
 
-    fetch('/listcomments', opts)
+    const id = this.props.visualization ? this.props.visualization._id : undefined;
+
+    fetch(`/listcomments/${id}`, opts)
       .then(response => response.json())
       .then((jsonResponse) => {
         if (jsonResponse.status === 200) {
@@ -38,16 +40,27 @@ class ListComments extends Component {
       });
   }
 
+
+
   render() {
     if (this.state.status) {
       return (
         <div> {
             this.comments.map((comment, index) => (
-              <div key={`comment${index + 20}`}>
-                <span>By<b>{comment.user.username}</b></span>
-                <p>{comment.text}</p>
-                <span>Date: <i>{comment.date}</i></span>
-              </div>)) }
+
+              <div className="card" key={`comment${index + 20}`}>
+                <div className="card-header">
+                  {comment.user.username} Says
+                </div>
+                <div className="card-body">
+                  <blockquote className="blockquote mb-0">
+                    <p>{comment.text}</p>
+                    <footer className="blockquote-footer">Date:
+                      <cite title="Source Title">{comment.date.toString()}</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+            )) }
         </div>
       );
     }

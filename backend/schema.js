@@ -2,6 +2,8 @@ var { mongoose } = require("./database.js");
 
 var User = {
   username: String,
+  firstName: String,
+  lastName: String,
   password: String,
   isAuthenticated: Boolean,
   email: String,
@@ -18,12 +20,17 @@ var Producer = mongoose.Schema(Object.create(User, {
 
 
 var Visualization = mongoose.Schema({
-  dataId: { type: mongoose.Schema.ObjectId, ref:"Data" },
-  x: String,
-  y: String,
-  type: String,
-  producerId: { type: mongoose.Schema.ObjectId, ref: 'User' },
-  consumers: [ { type: mongoose.Schema.ObjectId, ref: 'User'} ]
+  data: [{ x: String, y: String}],
+  name: String,
+  producerId: { type: mongoose.Schema.ObjectId, ref: 'User' }
+});
+
+var Note = mongoose.Schema({
+  text: String,
+  top: Number,
+  left: Number,
+  visualization: { type: mongoose.Schema.ObjectId, ref: 'Visualization' },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User' },
 });
 
 
@@ -42,5 +49,6 @@ module.exports = {
   Consumer,
   Producer,
   Visualization,
-  Comment
+  Comment,
+  Note
 };

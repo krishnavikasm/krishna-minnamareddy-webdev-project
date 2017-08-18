@@ -17,7 +17,7 @@ const authenticateLocalUser = (username, password, done) => {
 };
 
 const authenticate = (app) => {
-  
+
   app.use(passport.initialize());
   app.use(passport.session());
 
@@ -25,7 +25,7 @@ const authenticate = (app) => {
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
-  
+
     // used to deserialize the user
   passport.deserializeUser(function(id, done) {
     UserModelApi.findOne({_id: id}).then(function(user) {
@@ -39,6 +39,31 @@ const authenticate = (app) => {
       passwordField : 'password',
     },
     authenticateLocalUser));
+
+  passport.use('facebook',
+               new FacebookStrategy({
+                 clientID: process.env.CLIENT_ID,
+                 clientSecret: process.env.CLIENT_SECRET,
+                 callbackURL: "http://localhost:5000/login/facebook/return",
+                 enableProof: true,
+  },
+                                    function(accessToken, refreshToken, profile, cb)
+                                    {
+                                      UserModelApi.findOne(
+                                        {username: profile.id})
+                                        .then(response => {
+                                          if(!response)  {
+                                            UserModelApi.createUser({
+                                              username: profile.id,
+                                              firstName: profile.displayName
+                                            }).then(response => {
+                                              return cb(null, response);
+                                            });
+                                          } else {
+                                            return cb(null, response);
+                                          }
+                                        }).catch(err => console.log(err));
+                                    }));
 
 };
 

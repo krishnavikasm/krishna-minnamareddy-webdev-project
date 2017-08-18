@@ -4,25 +4,27 @@ import fetch from 'isomorphic-fetch';
 
 
 class Logout extends Component {
-  logout = () => {
+  componentWillMount() {
     const opts = {
       method: 'POST',
       credentials: 'same-origin',
     };
     fetch('/logout', opts)
       .then(() => {
+        this.props.onLogout();
+        this.props.router.push('/');
       });
-    this.props.router.push('/');
   }
   render() {
     return (
-      <button onClick={this.logout}> Logout</button>
+     <noscript />
     );
   }
 }
 
 Logout.propTypes = {
   router: PropTypes.object.isRequired, // eslint-disable-line
+  onLogout: PropTypes.func,
 };
 
 

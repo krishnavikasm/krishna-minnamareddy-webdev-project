@@ -18,7 +18,7 @@ class Search extends Component {
   }
 
   componentWillMount() {
-    fetch(` https://www.quandl.com/api/v3/datasets.json?database_code=NSE&sort_by=id&page=1&api_key=${API_KEY}`)
+    fetch(` https://www.quandl.com/api/v3/datasets.json?database_code=NSE&sort_by=id&page=1&api_key=Wp9sPTM_TDoyaTxu4yZ-`)
       .then(response => response.json())
       .then((jsonResponse) => {
         this.data = jsonResponse.datasets;
