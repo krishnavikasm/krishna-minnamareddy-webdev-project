@@ -44,7 +44,7 @@ const authenticate = (app) => {
                new FacebookStrategy({
                  clientID: process.env.CLIENT_ID,
                  clientSecret: process.env.CLIENT_SECRET,
-                 callbackURL: "http://localhost:5000/login/facebook/return",
+                 callbackURL: "https://webdev-spring-2017-krishna.herokuapp.com//login/facebook/return",
                  enableProof: true,
   },
                                     function(accessToken, refreshToken, profile, cb)
