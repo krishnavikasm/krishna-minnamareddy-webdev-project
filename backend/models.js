@@ -34,7 +34,6 @@ NoteApi = {
   find: (note) => NoteModel.find(note),
 };
 
-UserModelApi.createUser({username: "admin", password: "admin", role: "admin" });
 
 module.exports = {
   UserModelApi,
